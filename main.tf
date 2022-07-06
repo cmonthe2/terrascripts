@@ -36,7 +36,7 @@ Name = "kubernetes_vpc_public_route_table"
 }
 }
 
-resource "aws_route_table-association" "route_table_subnet_association" {
+resource "aws_route_table_association" "route_table_subnet_association" {
 count = length(var.subnets_cidr)
 subnet_id = element(aws_subnet.kubernetes_subnets.*.id, count.index)
 route_table_id = aws_route_table.kubernetes_public_route_table.id
